@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    student: {{ student.first_name }} {{ student.last_name }} <br>
+    direction: {{ student.direction.name }} <br>
+    birth date: {{ student.birth_date }} <br>
+    subject1 {{subject1}} | {{count1}} | {{score1}} <br>
+    subject2 {{subject2}} | {{count2}} | {{score2}} <br>
+    subject3 {{subject3}} | {{count3}} | {{score3}} <br><br>
+    <h1> Result : {{ result }}</h1>
+    <a href="{% url 'home' %}"> Home </a>
+</body> 
+</html>

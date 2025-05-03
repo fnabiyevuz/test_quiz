@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    {% for direction in directions %}
+    <h1> {{ direction.name }} </h1>
+    {% endfor %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        <label for="first_name">Name:</label>
+        <input type="text" id="first_name" name="first_name"><br><br>
+
+
+        <label for="last_name">SurName:</label>
+        <input type="text" id="last_name" name="last_name"><br><br>
+
+
+        <label for="birth_date">Birth date:</label>
+        <input type="date" id="birth_date" name="birth_date"><br><br>
+
+
+        <label for="direction">Direction:</label>
+        <select name="direction" id="direction">
+            {% for direction in directions %}
+            <option value="{{ direction.id }}">{{ direction.name }}</option>
+            {% endfor %}
+        </select> 
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body> 
+</html>
