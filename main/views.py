@@ -97,7 +97,7 @@ def quiz(request, student_id):
         'student_id':student_id,
         'student_question_id':student_question.id,
         'question':student_question.question,
-        'answers':Answer.objects.filter(question=student_question.question),
+        'answers':Answer.objects.filter(question=student_question.question).order_by('?'),
     }
 
     return render(request, 'quiz.html', data)
